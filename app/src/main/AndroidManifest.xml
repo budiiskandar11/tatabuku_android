@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tatabuku.app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".MainApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.admin.AdminSetting"></activity>
+        <activity android:name=".ui.terms.condition.PrivacyPolicy" />
+        <activity android:name=".ui.terms.condition.TermsCondition" />
+        <activity android:name=".terms.TermsCondition" />
+        <activity android:name=".terms.Terms_and_conditions" />
+        <activity android:name=".ui.WebViewActivity" />
+        <activity android:name=".ui.register.RegisterWebActivity" />
+        <activity android:name=".ui.penjualan.pembayaran.PembayaranCustomerActivity" />
+        <activity android:name=".ui.penjualan.checkout.CheckoutReturPenjualanActivity" />
+        <activity android:name=".ui.penjualan.order.OrderReturPenjualanActivity" />
+        <activity android:name=".ui.penjualan.pengiriman.PengirimanBarangActivity" />
+        <activity android:name=".ui.penjualan.checkout.CheckoutPenjualanActivity" />
+        <activity android:name=".ui.penjualan.order.OrderPenjualanActivity" />
+        <activity android:name=".ui.penjualan.tambah.dp.TambahDpCustomerActivity" />
+        <activity android:name=".ui.penjualan.detail.DetailCustomerActivity" />
+        <activity android:name=".ui.penjualan.tambah.customer.TambahCustomerActivity" />
+        <activity android:name=".ui.penjualan.dashboard.DashboardCustomerActivity" />
+        <activity android:name=".ui.fix_asset.jual_asset.JualAssetActivity" />
+        <activity android:name=".ui.fix_asset.detail_asset.DetailAssetActivity" />
+        <activity android:name=".ui.fix_asset.tambah_asset.TambahAssetActivity" />
+        <activity android:name=".ui.fix_asset.list_asset.ListAssetActivity" />
+        <activity android:name=".ui.fix_asset.dashboard.DashboardFixAssetActivity" />
+        <activity android:name=".ui.titip_journal.tambah.TambahTitipJournalActivity" />
+        <activity android:name=".ui.pembelian.pembayaran.PembayaranActivity" />
+        <activity android:name=".ui.pembelian.penerimaan.PenerimaanBarangActivity" />
+        <activity android:name=".ui.accounting.detail.DetailAccountingActivity" />
+        <activity android:name=".ui.accounting.dashboard.DashboardAccountingActivity" />
+        <activity android:name=".ui.pembelian.checkout.CheckoutReturActivity" />
+        <activity android:name=".ui.pembelian.tambah.dp.TambahDpPembelianActivity" />
+        <activity android:name=".ui.pembelian.checkout.CheckoutPembelianActivity" />
+        <activity android:name=".ui.pembelian.tambah.produk.TambahProdukActivity" />
+        <activity android:name=".ui.rekening.detail.RekeningDetailActivity" />
+        <activity android:name=".ui.rekening.rincian_biaya.RincianBiayaActivity" />
+        <activity android:name=".ui.rekening.catat_biaya.CatatBiayaActivity" />
+        <activity android:name=".ui.rekening.pindah_buku.PindahBukuActivity" />
+        <activity android:name=".ui.pembelian.order.OrderPembelianActivity" />
+        <activity android:name=".ui.pembelian.order.OrderReturActivity" />
+        <activity android:name=".ui.pembelian.tambah.supplier.TambahSupplierActivity" />
+        <activity android:name=".ui.rekening.dashboard.DashboardRekeningActivity" />
+        <activity android:name=".ui.pembelian.detail.DetailSupplierActivity" />
+        <activity android:name=".ui.pembelian.dashboard.DashboardSupplierActivity" />
+        <activity android:name=".ui.register.RegisterActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.titip_journal.detail.TitipJournalActivity" />
+        <activity android:name=".ui.splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.home.HomeActivity" />
+    </application>
+
+</manifest>

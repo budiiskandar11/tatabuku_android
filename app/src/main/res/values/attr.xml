@@ -1,0 +1,22 @@
+<resources>
+    <declare-styleable name="HomeMenu">
+        <attr name="homeMenuText" format="string" />
+        <attr name="homeMenuImage" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="TabMenu">
+        <attr name="tabMenuText" format="string" />
+        <attr name="tabMenuImage" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressView">
+        <attr name="progressText" format="string" />
+        <attr name="progressDrawable" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="LegendView">
+        <attr name="legendViewText" format="string" />
+        <attr name="legendViewPercent" format="string" />
+        <attr name="legendViewColor" format="integer" />
+    </declare-styleable>
+</resources>

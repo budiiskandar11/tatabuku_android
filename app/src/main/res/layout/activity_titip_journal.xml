@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.titip_journal.detail.TitipJournalActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_marginTop="-150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/new_background" />
+
+
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/arrow_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/accounting_dark_blue" />
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:text="Titip Journal"
+        android:gravity="center_horizontal"
+        android:textColor="@color/accounting_dark_blue"
+        android:textSize="24dp"
+        app:layout_constraintStart_toEndOf="@id/back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/header_container"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:layout_constraintTop_toBottomOf="@+id/header_title">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:scaleType="centerCrop"
+            android:src="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="Total Quota Titip Journal"
+                android:textColor="@color/hijau_tatabuku"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:text="Bulan ini"
+                android:textColor="#FFFFFF"
+                android:textSize="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/progressBartitip"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_vertical"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/circular_progress_bar_white" />
+
+                    <TextView
+                        android:id="@+id/titip_prosentase"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="0%"
+                        android:textColor="@color/hijau_tatabuku"
+
+                        android:textSize="16dp" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="70dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Quota : "
+                                android:textColor="@color/hijau_tatabuku"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:id="@+id/titip_quota"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/hijau_tatabuku"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" Transaksi"
+                                android:textColor="@color/hijau_tatabuku"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Terpakai : "
+                                android:textColor="@color/hijau_tatabuku"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:id="@+id/titip_terpakai"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="0"
+                                android:textColor="@color/hijau_tatabuku"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" Transaksi"
+                                android:textColor="@color/hijau_tatabuku"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sisa : "
+                                android:textColor="@color/hijau_tatabuku"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:id="@+id/titip_sisa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="@color/hijau_tatabuku"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" Transaksi"
+                                android:textColor="@color/hijau_tatabuku"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:orientation="vertical"
+        android:background="@color/white">
+    </FrameLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/container_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="12dp"
+        app:endIconMode="clear_text"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/header_container"
+        app:startIconDrawable="@drawable/search"
+        android:background="@color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="@drawable/search_background"
+            android:hint="@string/search_here"
+            android:lines="1"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_search"
+        app:layout_constraintBottom_toTopOf="@id/button_container">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:background="@color/blue" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="4dp"
+                                android:text="  List Transaksi Selesai  "
+                                android:textColor="@color/blue"
+                                android:textSize="12sp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:background="@color/blue" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/list_transaksi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginEnd="24dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:background="@color/blue" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="4dp"
+                                android:text="  List Titip Journal Baru  "
+                                android:textColor="@color/blue"
+                                android:textSize="12sp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:background="@color/blue" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/list_transaksi_baru"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <FrameLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@color/blue" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_gravity="bottom"
+                    android:padding="4dp"
+                    android:text="                              " />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@color/blue" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/buat_titip_journal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/confirm_button"
+                android:padding="4dp"
+                android:text="   Buat Titip Journal   "
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

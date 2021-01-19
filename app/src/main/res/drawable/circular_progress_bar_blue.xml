@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <rotate
+            android:fromDegrees="270"
+            android:toDegrees="270">
+            <shape
+                android:innerRadiusRatio="3"
+                android:shape="ring"
+                android:thickness="10dp"
+                android:useLevel="true">
+                <solid android:color="@color/blue" />
+            </shape>
+        </rotate>
+    </item>
+    <item>
+        <rotate>
+            <inset android:insetTop="-127dp">
+                <shape
+                    android:innerRadiusRatio="1000"
+                    android:shape="ring"
+                    android:thickness="10dp"
+                    android:useLevel="false">
+                    <solid android:color="@color/blue" />
+                </shape>
+            </inset>
+        </rotate>
+    </item>
+    <item>
+        <rotate>
+            <inset>
+                <shape
+                    android:innerRadiusRatio="1000"
+                    android:shape="ring"
+                    android:thickness="10dp"
+                    android:useLevel="false">
+                    <solid android:color="@color/blue" />
+                </shape>
+            </inset>
+        </rotate>
+    </item>
+</layer-list>

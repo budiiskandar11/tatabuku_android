@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="1dp"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:buttonTint="@color/hijau_tatabuku"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="@color/hijau_tatabuku"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/saldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_gray"
+            android:text="@string/saldo_n" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/value"
+        android:layout_width="150dp"
+        android:inputType="numberDecimal"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_border_gray"
+        android:hint="Placeholder"
+        android:textSize="14dp"
+        android:textColor="@color/hijau_tatabuku"
+        android:padding="4dp" />
+
+</LinearLayout>

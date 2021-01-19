@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "523476179191",
+    "firebase_url": "https://tatabuku-8e2b4.firebaseio.com",
+    "project_id": "tatabuku-8e2b4",
+    "storage_bucket": "tatabuku-8e2b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523476179191:android:00a99251e7f5bfba349bf2",
+        "android_client_info": {
+          "package_name": "com.tatabuku.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "523476179191-4v56oe0aj7u0g0h0m6ugqg4r3oqg86it.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz1Yjn8r6gLeTBmCQgEoI3n39d8nSveqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "523476179191-4v56oe0aj7u0g0h0m6ugqg4r3oqg86it.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

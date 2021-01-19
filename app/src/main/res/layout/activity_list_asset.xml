@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fix_asset.list_asset.ListAssetActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_marginTop="-150dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/new_background" />
+
+
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/arrow_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/accounting_dark_blue" />
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:text="-"
+        android:textColor="@color/accounting_dark_blue"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/total_fix_asset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_title">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Total"
+            android:textColor="@color/hijau_tatabuku"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/progressBar_beli"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:background="@drawable/circle_shape_grey_asset"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/circular_progress_bar_green" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar_depresiasi"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_shape_grey_asset"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/circular_progress_bar_magenta" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar_buku"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/circle_shape_grey_asset_small"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/circular_progress_bar_yellow" />
+
+            </FrameLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/pembelian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nilai Pembelian"
+                    android:textColor="@color/hijau_tatabuku"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/nom_pembelian"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="48dp"
+                    android:gravity="right"
+                    android:text="Rp -"
+                    android:textColor="@color/hijau_tatabuku"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/pembelian"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/pembelian" />
+
+                <TextView
+                    android:id="@+id/depresiasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Depresiasi"
+                    android:textColor="@color/hijau_tatabuku"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pembelian" />
+
+                <TextView
+                    android:id="@+id/nom_depresiasi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="48dp"
+                    android:gravity="right"
+                    android:text="Rp -"
+                    android:textColor="@color/hijau_tatabuku"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@id/depresiasi"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/penjualan" />
+
+                <TextView
+                    android:id="@+id/nilaibook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Nilai Buku"
+                    android:textColor="@color/hijau_tatabuku"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/depresiasi" />
+
+                <TextView
+                    android:id="@+id/nom_nilaibook"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="48dp"
+                    android:gravity="right"
+                    android:text="Rp -"
+                    android:textColor="@color/hijau_tatabuku"
+                    android:textSize="12dp"
+                    app:layout_constraintBottom_toBottomOf="@id/nilaibook"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/nilai_buku" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/label_daftar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/total_fix_asset">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@color/blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:text="      Daftar Aset      "
+                android:textColor="@color/hijau_tatabuku"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@color/blue" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="4dp"
+        app:layout_constraintTop_toBottomOf="@id/label_daftar"
+        app:layout_constraintBottom_toTopOf="@id/bottom_separator">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_transaksi"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/bottom_separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toTopOf="@id/tambah_asset"
+        android:layout_marginBottom="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@color/blue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="8dp"
+                android:layout_gravity="center"
+                android:padding="4dp"
+                android:text="                                  "
+                android:textColor="@color/blue"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@color/blue" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tambah_asset"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="120dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/confirm_button"
+        android:gravity="center"
+        android:text="Tambah Asset"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
