@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="@string/detail_supplier"
+                android:text="@string/detail_customer"
                 android:gravity="center_horizontal"
                 android:textColor="@color/accounting_dark_blue"
                 android:textSize="24sp" />
@@ -361,7 +361,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                app:tabMenuImage="@drawable/strikethrough_s"
+                                app:tabMenuImage="@drawable/money_bag2"
                                 app:tabMenuText="@string/uang_saya" />
 
                             <com.tatabuku.app.view.TabMenuView
@@ -377,7 +377,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                app:tabMenuImage="@drawable/payment_method"
+                                app:tabMenuImage="@drawable/hold_money"
                                 app:tabMenuText="@string/pembayaran" />
 
                             <com.tatabuku.app.view.TabMenuView

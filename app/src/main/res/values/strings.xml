@@ -87,7 +87,7 @@
     <string name="n_barang">%1$d Barang</string>
 
     <string name="bayar_dp">Bayar DP</string>
-    <string name="retur_barang">Return Barang</string>
+    <string name="retur_barang">Retur Barang</string>
     <string name="refund_dp">Refund DP</string>
     <string name="refund_retur">Refund Retur</string>
     <string name="total_dp_n">Total DP : %1$s</string>
@@ -208,4 +208,12 @@
     <string name="harga_rp">Harga :</string>
     <string name="list_customer">List Customer</string>
     <string name="klik_untuk_detail">List Detail</string>
+    <string name="laporan">Laporan</string>
+    <string name="laporan_pembelian">Pembelian</string>
+    <string name="laporan_penjualan">Laporan Penjualan</string>
+    <string name="laporan_rugilaba">Rugi Laba</string>
+    <string name="laporan_neraca">Neraca</string>
+    <string name="laporan_ar_aging">Aging Piutang</string>
+    <string name="laporan_ap_aging">Aging Hutang</string>
+    <string name="laporan_stok">Laporan Stok</string>
 </resources>

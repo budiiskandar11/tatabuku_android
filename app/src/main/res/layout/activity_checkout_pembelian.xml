@@ -388,7 +388,7 @@
                 android:layout_width="100dp"
                 android:layout_height="30dp"
                 android:gravity="center"
-                android:text="@string/lanjutkan"
+                android:text="Terima Barang"
                 android:background="@drawable/confirm_button"
                 android:textColor="@color/white"
                 android:textSize="12sp" />

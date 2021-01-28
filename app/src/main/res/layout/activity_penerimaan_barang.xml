@@ -36,6 +36,21 @@
                 android:src="@drawable/arrow_left"
                 app:tint="@color/accounting_dark_blue" />
 
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/deliver"
+                app:tint="@color/accounting_dark_blue" />
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="......"-->
+<!--                android:textColor="@color/accounting_dark_blue"-->
+<!--                android:textSize="24sp" />-->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -439,7 +439,7 @@
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
-                            app:tabMenuImage="@drawable/hand_monye"
+                            app:tabMenuImage="@drawable/money_bag2"
                             app:tabMenuText="@string/uang_saya" />
 
                         <com.tatabuku.app.view.TabMenuView
@@ -448,7 +448,7 @@
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
-                            app:tabMenuImage="@drawable/payment_method"
+                            app:tabMenuImage="@drawable/hold_money"
                             app:tabMenuText="@string/pembayaran" />
 
                         <com.tatabuku.app.view.TabMenuView
@@ -457,7 +457,7 @@
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
                             android:layout_gravity="fill"
-                            app:tabMenuImage="@drawable/percent"
+                            app:tabMenuImage="@drawable/percentage"
                             app:tabMenuText="@string/uang_muka" />
                     </GridLayout>
                 </androidx.cardview.widget.CardView>

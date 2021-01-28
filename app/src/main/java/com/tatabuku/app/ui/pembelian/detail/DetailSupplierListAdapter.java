@@ -109,21 +109,24 @@ public class DetailSupplierListAdapter extends RecyclerView.Adapter<RecyclerView
                         }
                     }
                 });
-            } else if (currentType == DashboardSupplierActivity.DashboardType.HUTANG || currentType == DashboardSupplierActivity.DashboardType.LUNAS) {
+            }
+            else if (currentType == DashboardSupplierActivity.DashboardType.HUTANG || currentType == DashboardSupplierActivity.DashboardType.LUNAS) {
                 InvoiceResult invoiceResult = viewModel.getInvoiceList().getValue().get(position);
                 vh.binding.orderId.setText("Order No " + invoiceResult.getNumber() + " : " + StringHelper.formatInvoiceDate(invoiceResult.getDateInvoice()));
                 vh.binding.name.setText(viewModel.getSupplierResult().getValue().getName());
-                vh.binding.value.setText(StringHelper.numberFormat(invoiceResult.getResidual()));
+//                vh.binding.value.setText(StringHelper.numberFormat(invoiceResult.getResidual()));
                 vh.binding.count.setText(String.format(context.getString(R.string.n_barang), invoiceResult.getInvoiceLineIds().get(0)));
 
                 vh.binding.label.setVisibility(View.VISIBLE);
                 if (invoiceResult.getState().equals("open")) {
                     vh.binding.label.setText(context.getString(R.string.bayar));
+                    vh.binding.value.setText(StringHelper.numberFormat(invoiceResult.getResidual()));
                     vh.binding.label.setBackgroundResource(R.drawable.rounded_red);
                     vh.binding.status.setText(context.getString(R.string.belum_lunas));
                     vh.binding.status.setTextColor(ContextCompat.getColor(context, R.color.red));
                 } else if (invoiceResult.getState().equals("paid")) {
                     vh.binding.label.setVisibility(View.INVISIBLE);
+                    vh.binding.value.setText(StringHelper.numberFormat(invoiceResult.getAmountTotal()));
                     vh.binding.status.setText(context.getString(R.string.lunas));
                     vh.binding.status.setTextColor(ContextCompat.getColor(context, R.color.gray));
                 }
@@ -151,13 +154,13 @@ public class DetailSupplierListAdapter extends RecyclerView.Adapter<RecyclerView
 
 
             if (dp.getDpType().equals("sup_payment_in")) {
-                vh.binding.background.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_blue));
+//                vh.binding.background.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_blue));
                 vh.binding.status.setText(context.getString(R.string.bayar_dp));
             } else if (dp.getDpType().equals("sup_payment_out")) {
-                vh.binding.background.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_green));
+//                vh.binding.background.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_green));
                 vh.binding.status.setText(context.getString(R.string.refund_dp));
             } else if (dp.getDpType().equals("retur_purchase")) {
-                vh.binding.background.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_red));
+//                vh.binding.background.setBackground(ContextCompat.getDrawable(context, R.drawable.rounded_red));
                 vh.binding.status.setText(context.getString(R.string.retur_barang));
             }
 

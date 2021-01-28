@@ -29,6 +29,7 @@
     <color name="magenta">#FF006F</color>
     <color name="yellow">#FFE600</color>
     <color name="semiTransparentColor">#99FFFFFF</color>
+    <color name="transparent_white">#CCFFFFFF</color>
     <color name="kuning">#FFFFFFFF</color>
     <color name="tatabuku_biru_muda">#E9FAFF</color>
     <color name="hijau_tatabuku">#0F5769</color>

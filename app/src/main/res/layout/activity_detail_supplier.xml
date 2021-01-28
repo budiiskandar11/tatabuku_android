@@ -365,7 +365,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            app:tabMenuImage="@drawable/strikethrough_s"
+                            app:tabMenuImage="@drawable/money_bag2"
                             app:tabMenuText="@string/hutang" />
 
 
@@ -383,7 +383,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            app:tabMenuImage="@drawable/payment_method"
+                            app:tabMenuImage="@drawable/hold_money"
                             app:tabMenuText="@string/pembayaran" />
 
                         <com.tatabuku.app.view.TabMenuView
@@ -546,12 +546,14 @@
 
                 <TextView
                     android:id="@+id/edit"
-                    android:layout_width="match_parent"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
+                    android:layout_marginBottom="3dp"
                     android:gravity="center"
                     android:text="@string/edit"
-                    android:textColor="@color/accounting_dark_blue"
+                    android:background="@drawable/rounded_orange"
+                    android:textColor="@color/white"
                     android:textSize="10dp" />
             </FrameLayout>
 

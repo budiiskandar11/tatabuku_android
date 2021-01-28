@@ -71,27 +71,21 @@ public class DashboardRekeningListAdapter extends RecyclerView.Adapter<RecyclerV
             switch (rekening.getName()) {
                 case "Kas":
                     binding.bgImage.setImageResource(R.drawable.background_blue);
-                    binding.bgImage2.setImageResource(R.drawable.kas);
                     break;
                 case "Bank Mandiri":
                     binding.bgImage.setImageResource(R.drawable.background_orange);
-                    binding.bgImage2.setImageResource(R.drawable.mandiri);
                     break;
                 case "Bank BCA":
                     binding.bgImage.setImageResource(R.drawable.background_blue);
-                    binding.bgImage2.setImageResource(R.drawable.bca);
                     break;
                 case "BRI":
                     binding.bgImage.setImageResource(R.drawable.background_red);
-                    binding.bgImage2.setImageResource(R.drawable.bri);
                     break;
                 case "BNI":
                     binding.bgImage.setImageResource(R.drawable.background_green);
-                    binding.bgImage2.setImageResource(R.drawable.bni);
                     break;
                 default:
                     binding.bgImage.setImageResource(R.drawable.background_blue);
-                    binding.bgImage2.setImageResource(R.drawable.kas);
                     break;
             }
         }

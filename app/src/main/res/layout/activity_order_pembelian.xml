@@ -263,7 +263,7 @@
                     android:layout_height="30dp"
                     android:gravity="center"
                     android:background="@drawable/confirm_button"
-                    android:text="@string/lanjutkan"
+                    android:text="Order"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
             </LinearLayout>

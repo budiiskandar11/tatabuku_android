@@ -110,7 +110,7 @@ public class DetailCustomerListAdapter extends RecyclerView.Adapter<RecyclerView
                 HutangData hutangData = viewModel.getHutangList().getValue().get(position);
                 vh.binding.orderId.setText("Order No " + hutangData.getInvNo() + " : " + StringHelper.formatInvoiceDate(hutangData.getDate()));
                 vh.binding.name.setText(hutangData.getPartnerName());
-                vh.binding.value.setText(StringHelper.numberFormat(hutangData.getTotalHarusDibayar()));
+
                 vh.binding.count.setText(String.format(context.getString(R.string.n_barang), hutangData.getJumlahBarang()));
                 vh.binding.label.setText(hutangData.getStatus());
                 vh.binding.status.setText(hutangData.getStatus());
@@ -119,10 +119,12 @@ public class DetailCustomerListAdapter extends RecyclerView.Adapter<RecyclerView
                 vh.binding.status.setText(hutangData.getStatus());
                 if (hutangData.getStatus().equals("Belum Bayar")) {
                     vh.binding.label.setText(context.getString(R.string.bayar));
+                    vh.binding.value.setText(StringHelper.numberFormat(hutangData.getTotalHarusDibayar()));
                     vh.binding.label.setBackgroundResource(R.drawable.rounded_red);
                     vh.binding.status.setTextColor(ContextCompat.getColor(context, R.color.red));
                 } else {
                     vh.binding.label.setVisibility(View.INVISIBLE);
+                    vh.binding.value.setText(StringHelper.numberFormat(hutangData.getTotalInvoice()));
                     vh.binding.status.setTextColor(ContextCompat.getColor(context, R.color.gray));
                 }
                 vh.binding.getRoot().setOnClickListener(new View.OnClickListener() {

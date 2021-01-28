@@ -226,15 +226,25 @@ public class DetailSupplierActivity extends AppCompatActivity implements DetailS
                 binding.rightText.setText(R.string.hutang_31_60_hari);
                 binding.progressText.setText(R.string.total_hutang);
                 break;
+//            case LUNAS:
+//                binding.valueLayout.setVisibility(View.VISIBLE);
+//                binding.textLayout.setVisibility(View.VISIBLE);
+//                binding.progressLayout.setVisibility(View.VISIBLE);
+//                binding.tabLunas.setSelected(true);
+//                binding.leftText.setText(R.string.belum_jatuh_tempo);
+//                binding.middleText.setText(R.string.hutang_1_30_hari);
+//                binding.rightText.setText(R.string.hutang_31_60_hari);
+//                binding.progressText.setText(R.string.total_hutang);
+//                break;
             case LUNAS:
                 binding.valueLayout.setVisibility(View.VISIBLE);
                 binding.textLayout.setVisibility(View.VISIBLE);
-                binding.progressLayout.setVisibility(View.VISIBLE);
+//                binding.progressLayout.setVisibility(View.VISIBLE);
                 binding.tabLunas.setSelected(true);
-                binding.leftText.setText(R.string.belum_jatuh_tempo);
-                binding.middleText.setText(R.string.hutang_1_30_hari);
-                binding.rightText.setText(R.string.hutang_31_60_hari);
-                binding.progressText.setText(R.string.total_hutang);
+//                binding.leftText.setText(R.string.belum_jatuh_tempo);
+//                binding.middleText.setText(R.string.hutang_1_30_hari);
+//                binding.rightText.setText(R.string.hutang_31_60_hari);
+//                binding.progressText.setText(R.string.total_hutang);
                 break;
             case UANGMUKA:
                 binding.progressLayout.setVisibility(View.VISIBLE);

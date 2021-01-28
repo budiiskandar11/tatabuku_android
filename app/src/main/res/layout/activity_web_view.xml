@@ -1,13 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
     tools:context=".ui.WebViewActivity">
 
-    <WebView
-        android:id="@+id/webview"
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="-150dp"
+    android:layout_gravity="center"
+    android:scaleType="centerCrop"
+    android:src="@drawable/new_background" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="0dp"
+    android:orientation="vertical">
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/arrow_left"
+            app:tint="@color/accounting_dark_blue" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/laporan"
+            android:textColor="@color/accounting_dark_blue"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:background="@drawable/white_transparent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="575dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <WebView
+                            android:id="@+id/webview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="-20dp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="-3dp"
+                            android:layout_marginEnd="0dp"
+                            app:cardBackgroundColor="@color/tatabuku_biru_muda"
+                            app:cardCornerRadius="0dp"
+                            app:cardElevation="0dp"
+                            app:cardUseCompatPadding="true">
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_below="@+id/seatLegendLayout">
+
+                                <FrameLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:id="@+id/linearLayout_gridtableLayout"
+                                        android:layout_width="900dp"
+                                        android:layout_height="70dp"
+                                        android:padding="4dp"
+                                        android:orientation="horizontal">
+
+                                        <GridLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginStart="0dp"
+                                            android:alignmentMode="alignBounds">
+
+                                            <com.tatabuku.app.view.TabMenuView
+                                                android:id="@+id/report_pembelian"
+                                                android:layout_width="0dp"
+                                                android:layout_marginStart="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_columnWeight="1"
+                                                android:layout_gravity="fill"
+                                                app:tabMenuImage="@drawable/shopping_basket"
+                                                app:tabMenuText="@string/laporan_pembelian" />
+
+                                            <com.tatabuku.app.view.TabMenuView
+                                                android:id="@+id/report_penjualan"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_columnWeight="1"
+                                                android:layout_gravity="fill"
+                                                app:tabMenuImage="@drawable/money_bag2"
+                                                app:tabMenuText="@string/laporan_penjualan" />
+
+                                            <com.tatabuku.app.view.TabMenuView
+                                                android:id="@+id/report_pnl"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_columnWeight="1"
+                                                android:layout_gravity="fill"
+                                                app:tabMenuImage="@drawable/hand_monye"
+                                                app:tabMenuText="@string/laporan_rugilaba" />
+
+                                            <com.tatabuku.app.view.TabMenuView
+                                                android:id="@+id/report_neraca"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_columnWeight="1"
+                                                android:layout_gravity="fill"
+                                                app:tabMenuImage="@drawable/ic_pnl"
+                                                app:tabMenuText="@string/laporan_neraca" />
+
+                                            <com.tatabuku.app.view.TabMenuView
+                                                android:id="@+id/report_piutang"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_columnWeight="1"
+                                                android:layout_gravity="fill"
+                                                app:tabMenuImage="@drawable/report_icon"
+                                                app:tabMenuText="@string/laporan_ar_aging" />
+
+                                            <com.tatabuku.app.view.TabMenuView
+                                                android:id="@+id/report_hutang"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_columnWeight="1"
+                                                android:layout_gravity="fill"
+                                                app:tabMenuImage="@drawable/ic_pnl"
+                                                app:tabMenuText="@string/laporan_ap_aging" />
+
+                                            <com.tatabuku.app.view.TabMenuView
+                                                android:id="@+id/report_stok"
+                                                android:layout_width="0dp"
+                                                android:layout_height="wrap_content"
+                                                android:layout_columnWeight="1"
+                                                android:layout_gravity="fill"
+                                                app:tabMenuImage="@drawable/ic_inventory"
+                                                app:tabMenuText="@string/laporan_stok" />
+                                        </GridLayout>
+                                    </LinearLayout>
+                                </FrameLayout>
+                            </HorizontalScrollView>
+
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/button_batalkan"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/cancel_button"
+                        android:gravity="center"
+                        android:text="Download Xls"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:id="@+id/button_simpan"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/confirm_button"
+                        android:gravity="center"
+                        android:text="Print Pdf"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
 </LinearLayout>
+</FrameLayout>
+
+

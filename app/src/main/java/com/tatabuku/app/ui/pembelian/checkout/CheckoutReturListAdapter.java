@@ -15,12 +15,14 @@ import com.bumptech.glide.Glide;
 import com.tatabuku.app.R;
 import com.tatabuku.app.databinding.ReturnListItemBinding;
 import com.tatabuku.app.model.pembelian.OrderModel;
+import com.tatabuku.app.ui.pembelian.order.OrderPembelianListener;
 import com.tatabuku.app.util.StringHelper;
 
 public class CheckoutReturListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private CheckoutReturViewModel viewModel;
     private Context context;
+
 
     public CheckoutReturListAdapter(CheckoutReturViewModel viewModel, Context context) {
         this.viewModel = viewModel;
@@ -49,7 +51,7 @@ public class CheckoutReturListAdapter extends RecyclerView.Adapter<RecyclerView.
             vh.binding.price.setText(StringHelper.numberFormat(order.getPrice_unit()));
             vh.binding.qty.setText(order.getProduct_qty() + "");
             vh.binding.maxQty.setText(String.format(context.getString(R.string.x_n_unit), order.getProduct_qty() + ""));
-
+//            vh.binding.category.setText(order.getCa
             vh.binding.image.setImageResource(R.drawable.no_image);
             try {
                 Glide.with(context).asBitmap()
@@ -80,6 +82,15 @@ public class CheckoutReturListAdapter extends RecyclerView.Adapter<RecyclerView.
                     }
                 }
             });
+
+//            vh.binding.edit.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    if (order != null) {
+//                        order.onEditProduct(order.getProduct_id());
+//                    }
+//                }
+//            });
         }
     }
 

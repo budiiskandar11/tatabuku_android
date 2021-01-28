@@ -32,13 +32,15 @@
 
             <TextView
                 android:id="@+id/edit"
-                android:layout_width="match_parent"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
                 android:text="@string/edit"
                 android:textSize="10dp"
-                android:textColor="@color/accounting_dark_blue"
+                android:background="@drawable/rounded_orange"
+                android:textColor="@color/white"
                 android:gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginStart="0dp"
                 android:src="@drawable/edit" />
 
