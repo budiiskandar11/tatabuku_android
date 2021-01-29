@@ -8,6 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface LoginService {
@@ -15,6 +16,6 @@ public interface LoginService {
     @POST("/web/session/authenticate")
     Call<LoginResponse> login(@Body LoginModel loginModel);
 
-    @GET("/api/res.partner?query={name,tatabuku_url,tatabuku_db,tatabuku_password,tatabuku_user}&filter=[[\"is_tatabuku_client\",\"=\",\"true\"]]")
-    Call<GetURLResponse> getUrl(@Query("id") Integer id);
+    @GET("/api/res.partner?query={name,tatabuku_url,tatabuku_db,tatabuku_password,tatabuku_user}")
+    Call<GetURLResponse> getUrl(@Query("filter") String filter);
 }
