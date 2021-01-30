@@ -66,8 +66,8 @@ public class CreateBankAccountActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 showLoading();
-                String nama = binding.namaBank.toString();
-                String rekening = binding.nomorRekening.toString();
+                String nama = binding.namaBank.getText().toString();
+                String rekening = binding.nomorRekening.getText().toString();
                 viewModel.createBankAccount(nama, rekening);
             }
         });

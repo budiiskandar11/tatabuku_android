@@ -104,6 +104,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginStart="20dp"
                         android:hint="Nomor Rekening"
+                        android:digits="0123456789"
+                        android:inputType="number"
                         android:textColor="@color/black"
                         android:textColorHint="@color/light_gray"
                         android:textSize="14dp" />
