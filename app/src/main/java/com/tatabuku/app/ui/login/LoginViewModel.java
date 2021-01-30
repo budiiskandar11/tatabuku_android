@@ -61,15 +61,15 @@ public class LoginViewModel extends ViewModel {
     }
 
     private void getUrl(Integer partnerId) {
-        Call<GetURLResponse> call = LoginConnectionManager.getInstance().getService().getUrl(partnerId);
+        String filter = "[[\"is_tatabuku_client\",\"=\",\"true\"],[\"id\",\"=\"," + partnerId + "]]";
+        Call<GetURLResponse> call = LoginConnectionManager.getInstance().getService().getUrl(filter);
         call.enqueue(new Callback<GetURLResponse>() {
             @Override
             public void onResponse(Call<GetURLResponse> call, Response<GetURLResponse> response) {
                 if (response.body() != null) {
                     if (response.body().getResult().size() > 0) {
                         GetURLResult result = response.body().getResult().get(0);
-//                        submitLoginAndroid(result.getTatabukuUrl(), result.getTatabukuDb(), result.getName(), result.getTatabukuPassword());
-                        submitLoginAndroid(result.getTatabukuUrl(), "Tatabuku", "admin", "a");
+                        submitLoginAndroid(result.getTatabukuUrl(), result.getTatabukuDb(), result.getTatabukuUser(), result.getTatabukuPassword());
                     } else {
                         onError.setValue("Terjadi kesalahan pada server");
                     }
