@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.admin.AdminSetting"></activity>
+        <activity android:name=".ui.rekening.create_bank_account.CreateBankAccountActivity"></activity>
+        <activity android:name=".ui.admin.AdminSetting" />
         <activity android:name=".ui.terms.condition.PrivacyPolicy" />
         <activity android:name=".ui.terms.condition.TermsCondition" />
         <activity android:name=".terms.TermsCondition" />

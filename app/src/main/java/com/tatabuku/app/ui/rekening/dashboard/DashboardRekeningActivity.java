@@ -18,6 +18,7 @@ import com.tatabuku.app.model.rekening.DashboardRekeningHeader;
 import com.tatabuku.app.model.rekening.DashboardRekeningModel;
 import com.tatabuku.app.ui.fix_asset.dashboard.DashboardFixAssetActivity;
 import com.tatabuku.app.ui.fix_asset.list_asset.ListAssetActivity;
+import com.tatabuku.app.ui.rekening.create_bank_account.CreateBankAccountActivity;
 import com.tatabuku.app.ui.rekening.detail.RekeningDetailActivity;
 import com.tatabuku.app.util.StringHelper;
 
@@ -99,6 +100,14 @@ public class DashboardRekeningActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 fetchData();
+            }
+        });
+
+        binding.addRekeningButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DashboardRekeningActivity.this, CreateBankAccountActivity.class);
+                startActivity(intent);
             }
         });
 
