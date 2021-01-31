@@ -86,6 +86,9 @@ import com.tatabuku.app.model.penjualan.SaleIdPostModel;
 import com.tatabuku.app.model.penjualan.ShippingReceivedModel;
 import com.tatabuku.app.model.rekening.CatatBiayaRequest;
 import com.tatabuku.app.model.rekening.CatatBiayaResponse;
+import com.tatabuku.app.model.rekening.CreateBankAccountParams;
+import com.tatabuku.app.model.rekening.CreateBankAccountRequest;
+import com.tatabuku.app.model.rekening.CreateBankAccountResponse;
 import com.tatabuku.app.model.rekening.DashboardRekeningRequest;
 import com.tatabuku.app.model.rekening.DashboardRekeningResponse;
 import com.tatabuku.app.model.rekening.DeleteBiayaRequest;
@@ -387,6 +390,9 @@ public interface APIService {
 
     @POST("/create_titip_journal")
     Call<CreateTitipJurnalResponse> createTitipJurnal(@Body CreateTitipJurnalRequest createTitipJurnalRequest);
+
+    @POST("/create_rekening")
+    Call<CreateBankAccountResponse> createBankAccount(@Body CreateBankAccountRequest createBankAccountRequest);
 
     // terms condition
     @GET("/api/res.company/?&query={terms_condition}")

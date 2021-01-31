@@ -187,7 +187,7 @@
 
     <string name="pembayaran">Pembayaran</string>
     <string name="pilih_pembayaran">Pilih Pembayaran</string>
-<!--    <string name="n_produk_lainnya">+ %1$d Produk Lainnya</string>-->
+    <!--    <string name="n_produk_lainnya">+ %1$d Produk Lainnya</string>-->
     <string name="n_produk_lainnya">Cek Item</string>
     <string name="saldo_n">Saldo : %1$s</string>
     <string name="bayar_dengan_n">Bayar dengan %1$s</string>
