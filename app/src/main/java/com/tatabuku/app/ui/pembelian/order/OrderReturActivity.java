@@ -24,6 +24,7 @@ import com.tatabuku.app.ui.BaseActivity;
 import com.tatabuku.app.ui.pembelian.checkout.CheckoutPembelianActivity;
 import com.tatabuku.app.ui.pembelian.checkout.CheckoutReturActivity;
 import com.tatabuku.app.ui.pembelian.tambah.produk.TambahProdukActivity;
+import com.tatabuku.app.ui.penjualan.order.OrderPenjualanCategoryAdapter;
 import com.tatabuku.app.util.StringHelper;
 
 import java.util.ArrayList;
@@ -33,7 +34,8 @@ public class OrderReturActivity extends BaseActivity implements OrderPembelianLi
 
     private ActivityOrderPembelianBinding binding;
     private OrderReturListAdapter listAdapter;
-    private LinearLayoutManager layoutManager;
+    private OrderReturCategoryAdapter categoryAdapter;
+    private LinearLayoutManager layoutManager, categoryLayoutManager;
     private OrderReturViewModel viewModel;
 
     public static final String ARG_SUPPLIER = "ARG_SUPPLIER";
@@ -47,6 +49,7 @@ public class OrderReturActivity extends BaseActivity implements OrderPembelianLi
 
         setupView();
         setupList();
+        setupCategoryList();
         configureView();
         configureViewModel();
     }
@@ -67,6 +70,7 @@ public class OrderReturActivity extends BaseActivity implements OrderPembelianLi
         viewModel.getSelectedCategory().observe(this, new Observer<Category>() {
             @Override
             public void onChanged(Category category) {
+                categoryAdapter.notifyDataSetChanged();
                 viewModel.fetchProduk(viewModel.getSelectedCategory().getValue(), binding.search.getText().toString());
             }
         });
@@ -75,6 +79,13 @@ public class OrderReturActivity extends BaseActivity implements OrderPembelianLi
             @Override
             public void onChanged(List<Produk> produks) {
                 listAdapter.notifyDataSetChanged();
+            }
+        });
+
+        viewModel.getCategories().observe(this, new Observer<List<Category>>() {
+            @Override
+            public void onChanged(List<Category> categories) {
+                categoryAdapter.notifyDataSetChanged();
             }
         });
     }
@@ -100,13 +111,6 @@ public class OrderReturActivity extends BaseActivity implements OrderPembelianLi
     }
 
     private void configureView() {
-        registerForContextMenu(binding.category);
-        binding.category.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openContextMenu(binding.category);
-            }
-        });
 
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,6 +174,15 @@ public class OrderReturActivity extends BaseActivity implements OrderPembelianLi
         binding.list.setAdapter(listAdapter);
     }
 
+    private void setupCategoryList() {
+        categoryLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        binding.categoryList.setLayoutManager(categoryLayoutManager);
+
+        categoryAdapter = new OrderReturCategoryAdapter(this, viewModel);
+        categoryAdapter.setListener(this);
+        binding.categoryList.setAdapter(categoryAdapter);
+    }
+
     @Override
     public void onOrderChanged() {
         Double subtotal = 0.0;
@@ -182,27 +195,11 @@ public class OrderReturActivity extends BaseActivity implements OrderPembelianLi
     }
 
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo
-            menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        menu.setHeaderTitle(getString(R.string.kategori_produk));
-        menu.add(0, -1, 0, getString(R.string.semua_kategori));
-        for (int i = 0; i < viewModel.getCategories().getValue().size(); i++) {
-            menu.add(0, i, 0, viewModel.getCategories().getValue().get(i).getName());
-        }
-    }
-
-    @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == -1) {
-            viewModel.getSelectedCategory().setValue(null);
-        } else {
-            viewModel.getSelectedCategory().setValue(viewModel.getCategories().getValue().get(item.getItemId()));
-        }
-        return super.onContextItemSelected(item);
-    }
-
-    @Override
     public void onEditProduct(int productId) {
+    }
+
+    @Override
+    public void onSelectCategory(Category category) {
+        viewModel.getSelectedCategory().setValue(category);
     }
 }
