@@ -1,13 +1,21 @@
 package com.tatabuku.app.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.app.DownloadManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.DownloadListener;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -19,6 +27,7 @@ import com.tatabuku.app.service.ConnectionManager;
 import com.tatabuku.app.ui.login.LoginActivity;
 import com.tatabuku.app.ui.pembelian.dashboard.DashboardSupplierActivity;
 import com.tatabuku.app.ui.register.RegisterWebActivity;
+import com.tatabuku.app.util.JavaScriptInterface;
 import com.tatabuku.app.util.StringHelper;
 
 import java.util.Collections;
@@ -50,7 +59,16 @@ public class WebViewActivity<SetCurrentTab> extends AppCompatActivity {
         setupView();
 
         setCurrentTab(TabType.PEMBELIAN);
+        checkPermission();
+    }
 
+    private void checkPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{ Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    1);
+        }
     }
 
     private void setupView() {
@@ -70,6 +88,23 @@ public class WebViewActivity<SetCurrentTab> extends AppCompatActivity {
         binding.webview.setWebViewClient(client);
         binding.webview.getSettings().setJavaScriptEnabled(true);
         binding.webview.loadUrl("http://103.152.118.69:8069/web?debug#action=270&model=purchase.report&view_type=pivot&menu_id=148");
+
+        binding.webview.setDownloadListener(new DownloadListener() {
+            @Override
+            public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimeType, long contentLength) {
+                binding.webview.loadUrl(JavaScriptInterface.getBase64StringFromBlobUrl(url));
+            }
+        });
+
+        binding.webview.getSettings().setAppCachePath(getApplicationContext().getCacheDir().getAbsolutePath());
+        binding.webview.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+        binding.webview.getSettings().setDatabaseEnabled(true);
+        binding.webview.getSettings().setDomStorageEnabled(true);
+        binding.webview.getSettings().setUseWideViewPort(true);
+        binding.webview.getSettings().setLoadWithOverviewMode(true);
+        binding.webview.addJavascriptInterface(new JavaScriptInterface(this), "Android");
+        binding.webview.getSettings().setPluginState(WebSettings.PluginState.ON);
+
 
 //        tambahan budi
         binding.reportPembelian.setOnClickListener(new View.OnClickListener() {

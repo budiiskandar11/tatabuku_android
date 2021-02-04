@@ -19,8 +19,14 @@ public class ConnectionManager {
     private APIService mInterface;
     private SessionCookieJar sessionCookieJar;
     private static ConnectionManager ourInstance;
+    private static String url;
+
+    public static String getUrl() {
+        return url;
+    }
 
     public static void newInstance(String url) {
+        ConnectionManager.url = url;
         ourInstance = new ConnectionManager(url);
     }
 
