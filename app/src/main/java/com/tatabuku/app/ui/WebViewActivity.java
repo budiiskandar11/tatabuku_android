@@ -87,7 +87,7 @@ public class WebViewActivity<SetCurrentTab> extends AppCompatActivity {
 
         binding.webview.setWebViewClient(client);
         binding.webview.getSettings().setJavaScriptEnabled(true);
-        binding.webview.loadUrl("http://103.152.118.69:8069/web?debug#action=270&model=purchase.report&view_type=pivot&menu_id=148");
+        binding.webview.loadUrl(ConnectionManager.getUrl() + "web?debug#action=270&model=purchase.report&view_type=pivot&menu_id=148");
 
         binding.webview.setDownloadListener(new DownloadListener() {
             @Override
@@ -113,7 +113,7 @@ public class WebViewActivity<SetCurrentTab> extends AppCompatActivity {
                 binding.title.setText("Report Pembelian");
                 binding.webview.setWebViewClient(client);
                 binding.webview.getSettings().setJavaScriptEnabled(true);
-                binding.webview.loadUrl("http://103.152.118.69:8069/web?debug#action=270&model=purchase.report&view_type=pivot&menu_id=148");
+                binding.webview.loadUrl(ConnectionManager.getUrl() + "web?debug#action=270&model=purchase.report&view_type=pivot&menu_id=148");
                 setCurrentTab(TabType.PEMBELIAN);
                 binding.reportPembelian.setSelected(true);
 
@@ -126,7 +126,7 @@ public class WebViewActivity<SetCurrentTab> extends AppCompatActivity {
                 binding.title.setText("Report Hutang");
                 binding.webview.setWebViewClient(client);
                 binding.webview.getSettings().setJavaScriptEnabled(true);
-                binding.webview.loadUrl("http://103.152.118.69:8069/web#action=321&menu_id=85");
+                binding.webview.loadUrl(ConnectionManager.getUrl() + "web#action=321&menu_id=85");
                 setCurrentTab(TabType.HUTANG);
                 binding.reportHutang.setSelected(true);
             }
@@ -138,7 +138,7 @@ public class WebViewActivity<SetCurrentTab> extends AppCompatActivity {
                 binding.title.setText("Report Piutang");
                 binding.webview.setWebViewClient(client);
                 binding.webview.getSettings().setJavaScriptEnabled(true);
-                binding.webview.loadUrl("http://103.152.118.69:8069/web#action=320&menu_id=85");
+                binding.webview.loadUrl(ConnectionManager.getUrl() + "web#action=320&menu_id=85");
                 setCurrentTab(TabType.PIUTANG);
                 binding.reportPiutang.setSelected(true);
             }
@@ -150,7 +150,7 @@ public class WebViewActivity<SetCurrentTab> extends AppCompatActivity {
                 binding.title.setText("Report Hutang");
                 binding.webview.setWebViewClient(client);
                 binding.webview.getSettings().setJavaScriptEnabled(true);
-                binding.webview.loadUrl("http://103.152.118.69:8069/web#action=338&model=sale.report&view_type=pivot&menu_id=221");
+                binding.webview.loadUrl(ConnectionManager.getUrl() + "web#action=338&model=sale.report&view_type=pivot&menu_id=221");
                 setCurrentTab(TabType.PENJUALAN);
                 binding.reportPenjualan.setSelected(true);
             }
@@ -162,7 +162,7 @@ public class WebViewActivity<SetCurrentTab> extends AppCompatActivity {
                 binding.title.setText("Report Neraca");
                 binding.webview.setWebViewClient(client);
                 binding.webview.getSettings().setJavaScriptEnabled(true);
-                binding.webview.loadUrl("http://103.152.118.69:8069/web#action=309&menu_id=85");
+                binding.webview.loadUrl(ConnectionManager.getUrl() + "web#action=309&menu_id=85");
                 setCurrentTab(TabType.NERACA);
                 binding.reportNeraca.setSelected(true);
             }
@@ -174,7 +174,7 @@ public class WebViewActivity<SetCurrentTab> extends AppCompatActivity {
                 binding.title.setText("Report Laba Rugi");
                 binding.webview.setWebViewClient(client);
                 binding.webview.getSettings().setJavaScriptEnabled(true);
-                binding.webview.loadUrl("http://103.152.118.69:8069/web#action=308&menu_id=85");
+                binding.webview.loadUrl(ConnectionManager.getUrl() + "web#action=308&menu_id=85");
                 setCurrentTab(TabType.PNL);
                 binding.reportPnl.setSelected(true);
             }
@@ -186,7 +186,7 @@ public class WebViewActivity<SetCurrentTab> extends AppCompatActivity {
                 binding.title.setText("Report Stok");
                 binding.webview.setWebViewClient(client);
                 binding.webview.getSettings().setJavaScriptEnabled(true);
-                binding.webview.loadUrl("http://103.152.118.69:8069/web#action=422&active_id=4&model=product.product&view_type=list&menu_id=247");
+                binding.webview.loadUrl(ConnectionManager.getUrl() + "web#action=422&active_id=4&model=product.product&view_type=list&menu_id=247");
                 setCurrentTab(TabType.STOCK);
                 binding.reportStok.setSelected(true);
             }
