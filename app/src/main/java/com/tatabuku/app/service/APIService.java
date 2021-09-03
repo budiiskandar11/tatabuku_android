@@ -47,8 +47,8 @@ import com.tatabuku.app.model.pembelian.PaymentIdModel;
 import com.tatabuku.app.model.pembelian.PaymentTermResponse;
 import com.tatabuku.app.model.pembelian.PembayaranResponse;
 import com.tatabuku.app.model.pembelian.PenerimaanBarangResponse;
+import com.tatabuku.app.model.pembelian.PrivacyModel;
 import com.tatabuku.app.model.pembelian.PrivacyPolicyRespone;
-import com.tatabuku.app.model.pembelian.PrivacyRequestModel;
 import com.tatabuku.app.model.pembelian.ProdukListResponse;
 import com.tatabuku.app.model.pembelian.ProvinceDataResponse;
 import com.tatabuku.app.model.pembelian.RegisterModel;
@@ -402,5 +402,5 @@ public interface APIService {
 
     // terms condition
     @POST("/company_privacy_policy")
-    Call<PrivacyPolicyRespone> getTermsCondition(@Body PrivacyRequestModel privacyRequestModel);
+    Call<PrivacyPolicyRespone> getTermsCondition(@Body PrivacyModel privacyModel);
 }

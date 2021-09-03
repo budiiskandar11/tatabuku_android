@@ -4,26 +4,26 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class PrivacyPolicyResult {
-    @SerializedName("terms_and_condition")
+    @SerializedName("result")
     @Expose
-    private String terms;
-    @SerializedName("privacy_policy")
+    private PrivacyPolicyDataResult dataResult;
+    @SerializedName("message")
     @Expose
-    private String privacy;
+    private String message;
 
-    public String getTerms() {
-        return terms;
+    public PrivacyPolicyDataResult getDataResult() {
+        return dataResult;
     }
 
-    public void setTerms(String terms) {
-        this.terms = terms;
+    public void setDataResult(PrivacyPolicyDataResult dataResult) {
+        this.dataResult = dataResult;
     }
 
-    public String getPrivacy() {
-        return privacy;
+    public String getMessage() {
+        return message;
     }
 
-    public void setPrivacy(String privacy) {
-        this.privacy = privacy;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
