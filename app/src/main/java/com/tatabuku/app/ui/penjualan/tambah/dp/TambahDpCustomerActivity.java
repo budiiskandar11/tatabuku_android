@@ -91,6 +91,7 @@ public class TambahDpCustomerActivity extends BaseActivity implements DatePicker
                     isRefund = true;
                     binding.title.setText(R.string.customer_tarik_dp);
                     binding.subtitle.setText(R.string.refund_dp);
+                    binding.rekeningDariKe.setText("Dari Rekening");
                 }
             }
         });

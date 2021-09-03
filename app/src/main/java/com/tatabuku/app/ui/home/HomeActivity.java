@@ -118,21 +118,21 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        binding.menuFixedAsset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, DashboardFixAssetActivity.class);
-                startActivity(intent);
-            }
-        });
+//        binding.menuFixedAsset.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(HomeActivity.this, DashboardFixAssetActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
-        binding.menuTataBukuKu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeActivity.this, TitipJournalActivity.class);
-                startActivity(intent);
-            }
-        });
+//        binding.menuTataBukuKu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(HomeActivity.this, TitipJournalActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         binding.menuReport.setOnClickListener(new View.OnClickListener() {
             @Override

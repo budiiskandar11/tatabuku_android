@@ -8,9 +8,18 @@
     android:background="@drawable/new_background"
     tools:context=".ui.home.HomeActivity">
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:textSize="14dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Halo, PT Fokus Maju Bersama"
+        android:textColor="@color/blue" />
+
+<ScrollView
     android:layout_width="match_parent"
     android:layout_marginTop="120dp"
     android:background="@drawable/white_transparent"
@@ -68,23 +77,24 @@
 
 
 
-                <com.tatabuku.app.view.HomeMenuView
-                    android:id="@+id/menu_fixed_asset"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_gravity="fill"
-                    app:homeMenuImage="@drawable/ic_fixed_asset"
-                    app:homeMenuText="@string/fixed_asset" />
+
 
                 <com.tatabuku.app.view.HomeMenuView
-                    android:id="@+id/menu_tata_buku_ku"
+
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
                     android:layout_gravity="fill"
                     app:homeMenuImage="@drawable/ic_tata_buku_ku"
                     app:homeMenuText="@string/tata_buku_ku" />
+<!--                <com.tatabuku.app.view.HomeMenuView-->
+<!--                    android:id="@+id/menu_tata_buku_ku"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_columnWeight="1"-->
+<!--                    android:layout_gravity="fill"-->
+<!--                    app:homeMenuImage="@drawable/ic_tata_buku_ku"-->
+<!--                    app:homeMenuText="@string/tata_buku_ku" />-->
 
                 <com.tatabuku.app.view.HomeMenuView
                     android:id="@+id/menu_report"
@@ -119,7 +129,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="3dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="16dp"
             android:text="@string/hutang_dan_piutang"

@@ -200,13 +200,13 @@ public class CheckoutPembelianActivity extends BaseActivity {
             }
         });
 
-        binding.save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showLoading();
-                viewModel.saveOrder(orderId, true);
-            }
-        });
+//        binding.save.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                showLoading();
+//                viewModel.saveOrder(orderId, true);
+//            }
+//        });
 
         binding.addItem.setOnClickListener(new View.OnClickListener() {
             @Override

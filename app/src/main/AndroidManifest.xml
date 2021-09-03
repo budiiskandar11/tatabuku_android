@@ -8,14 +8,18 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:usesCleartextTraffic="true"
         android:name=".MainApplication"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_tatabuku"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_tatabuku_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
+<!--        <meta-data-->
+<!--            android:name="com.google.android.actions"-->
+<!--            android:resource="@xml/animation_top" />-->
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -24,15 +28,15 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".ui.rekening.create_bank_account.CreateBankAccountActivity"></activity>
+        <activity android:name=".ui.rekening.create_bank_account.CreateBankAccountActivity" />
         <activity android:name=".ui.admin.AdminSetting" />
         <activity android:name=".ui.terms.condition.PrivacyPolicy" />
         <activity android:name=".ui.terms.condition.TermsCondition" />
-        <activity android:name=".terms.TermsCondition" />
-        <activity android:name=".terms.Terms_and_conditions" />
+<!--        <activity android:name=".terms.TermsCondition" />-->
+<!--        <activity android:name=".terms.Terms_and_conditions" />-->
         <activity android:name=".ui.WebViewActivity" />
         <activity android:name=".ui.register.RegisterWebActivity" />
         <activity android:name=".ui.penjualan.pembayaran.PembayaranCustomerActivity" />

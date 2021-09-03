@@ -89,7 +89,7 @@ public class DetailCustomerListAdapter extends RecyclerView.Adapter<RecyclerView
                     vh.binding.status.setTextColor(ContextCompat.getColor(context, R.color.red));
                 } else if (penjualanData.getStatus().equalsIgnoreCase("Kirim Sebagian")) {
                     vh.binding.label.setVisibility(View.INVISIBLE);
-                    vh.binding.status.setTextColor(ContextCompat.getColor(context, R.color.gray));
+                    vh.binding.status.setTextColor(ContextCompat.getColor(context, R.color.red));
                 }
                 vh.binding.getRoot().setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -100,6 +100,8 @@ public class DetailCustomerListAdapter extends RecyclerView.Adapter<RecyclerView
                                 listener.onCheckout(penjualanData.getId());
                             } else if (penjualanData.getStatus().equalsIgnoreCase("Belum dikirim")) {
                                 listener.onKirimBarang(penjualanData.getId());
+                            } else if (penjualanData.getStatus().equalsIgnoreCase("Kirim Sebagian")) {
+                                    listener.onKirimBarang(penjualanData.getId());
                             } else {
                                 listener.onViewOrder(penjualanData.getId());
                             }

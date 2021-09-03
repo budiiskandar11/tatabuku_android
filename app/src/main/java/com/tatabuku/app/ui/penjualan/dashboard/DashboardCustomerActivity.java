@@ -129,13 +129,13 @@ public class DashboardCustomerActivity extends AppCompatActivity {
                 binding.percentTahunIni.setText(percentTahunIni.intValue() + "%");
                 binding.progressTahunIni.setProgress(percentTahunIni.intValue());
 
-                for (SaleChannel channel : dashboardTotalPenjualanResult.getSaleChannel()) {
-                    if (channel.getTeamName().equalsIgnoreCase("Offline")) {
-                        binding.offlineValue.setText(StringHelper.numberFormatWithDecimal(channel.getAmountTotal()));
-                    } else if (channel.getTeamName().equalsIgnoreCase("Online")) {
-                        binding.onlineValue.setText(StringHelper.numberFormatWithDecimal(channel.getAmountTotal()));
-                    }
-                }
+//                for (SaleChannel channel : dashboardTotalPenjualanResult.getSaleChannel()) {
+//                    if (channel.getTeamName().equalsIgnoreCase("Offline")) {
+//                        binding.offlineValue.setText(StringHelper.numberFormatWithDecimal(channel.getAmountTotal()));
+//                    } else if (channel.getTeamName().equalsIgnoreCase("Online")) {
+//                        binding.onlineValue.setText(StringHelper.numberFormatWithDecimal(channel.getAmountTotal()));
+//                    }
+//                }
 
                 setupPieChart(dashboardTotalPenjualanResult.getTopTenProduct());
             }
@@ -147,7 +147,7 @@ public class DashboardCustomerActivity extends AppCompatActivity {
                 switch (currentType) {
                     case PIUTANG:
                     case LUNAS:
-                        binding.leftValue.setText(StringHelper.numberFormat(dashboardCustomerTotalResult.getTotalHutang().getTotalPiutangHari()));
+                        binding.leftValue.setText(StringHelper.numberFormat(dashboardCustomerTotalResult.getTotalHutang().getPiutangTotal()));
                         binding.middleValue.setText(StringHelper.numberFormat(dashboardCustomerTotalResult.getTotalHutang().getTotalPiutang30()));
                         binding.rightValue.setText(StringHelper.numberFormat(dashboardCustomerTotalResult.getTotalHutang().getTotalPiutang60()));
                         break;
@@ -347,8 +347,8 @@ public class DashboardCustomerActivity extends AppCompatActivity {
 //                binding.topCardBackground.setImageResource(R.drawable.background_red);
                 binding.title.setText(R.string.total_piutang);
                 binding.leftText.setText(R.string.belum_terlambat_bayar);
-                binding.middleText.setText("1-30 Hari");
-                binding.rightText.setText("31_60_hari");
+                binding.middleText.setText(R.string.hutang_1_30_hari);
+                binding.rightText.setText(R.string.hutang_31_60_hari);
                 break;
             case UANGMUKA:
                 binding.headerCard.setVisibility(View.VISIBLE);

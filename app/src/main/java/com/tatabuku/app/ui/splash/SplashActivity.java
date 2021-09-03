@@ -8,6 +8,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.tatabuku.app.databinding.ActivitySplashBinding;
+import com.tatabuku.app.ui.home.HomeActivity;
 import com.tatabuku.app.ui.login.LoginActivity;
 import com.tatabuku.app.ui.register.RegisterActivity;
 import com.tatabuku.app.ui.register.RegisterWebActivity;
@@ -31,18 +32,11 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void configureView() {
-        binding.signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
 
         binding.signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SplashActivity.this, RegisterWebActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

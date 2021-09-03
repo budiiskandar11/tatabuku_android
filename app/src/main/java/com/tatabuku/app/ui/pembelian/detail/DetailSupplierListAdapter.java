@@ -90,7 +90,9 @@ public class DetailSupplierListAdapter extends RecyclerView.Adapter<RecyclerView
                     vh.binding.status.setText(context.getString(R.string.cancel));
                     vh.binding.status.setTextColor(ContextCompat.getColor(context, R.color.red));
                 } else if (orderResult.getState().equals("partial_lock")) {
-                    vh.binding.label.setVisibility(View.INVISIBLE);
+                    vh.binding.label.setText(context.getString(R.string.terima_barang));
+                    vh.binding.label.setBackgroundResource(R.drawable.rounded_red);
+//                    vh.binding.label.setVisibility(View.INVISIBLE);
                     vh.binding.status.setText(context.getString(R.string.partially_done));
                     vh.binding.status.setTextColor(ContextCompat.getColor(context, R.color.gray));
                 }
@@ -103,7 +105,10 @@ public class DetailSupplierListAdapter extends RecyclerView.Adapter<RecyclerView
                                 listener.onCheckout(orderResult.getId());
                             } else if (orderResult.getState().equals("purchase")) {
                                 listener.onTerimaBarang(orderResult.getId());
-                            } else {
+                            } else if (orderResult.getState().equals("partial_lock")) {
+                                listener.onTerimaBarang(orderResult.getId());
+                            }
+                            else {
                                 listener.onViewOrder(orderResult.getId());
                             }
                         }

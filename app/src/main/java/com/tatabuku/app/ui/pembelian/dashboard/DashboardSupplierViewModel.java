@@ -139,7 +139,7 @@ public class DashboardSupplierViewModel extends ViewModel {
 
     private void fetchFaveSupplierList(DashboardSupplierActivity.DashboardType type) {
         String[] params = listParams[type.ordinal()];
-        String stringParams = "{id, name, mobile, street, street2, city, image, " + StringHelper.convertStringArrayToString(params, ",") + "}";
+        String stringParams = "{id, name, mobile, street, street2, city, image, " + StringHelper.convertStringArrayToString(params, ",") + "}";;
 
         Call<SupplierListResponse> call = ConnectionManager.getInstance().getService().getFavoriteSupplierList(stringParams);
         call.enqueue(new Callback<SupplierListResponse>() {

@@ -47,8 +47,12 @@ import com.tatabuku.app.model.pembelian.PaymentIdModel;
 import com.tatabuku.app.model.pembelian.PaymentTermResponse;
 import com.tatabuku.app.model.pembelian.PembayaranResponse;
 import com.tatabuku.app.model.pembelian.PenerimaanBarangResponse;
+import com.tatabuku.app.model.pembelian.PrivacyPolicyRespone;
+import com.tatabuku.app.model.pembelian.PrivacyRequestModel;
 import com.tatabuku.app.model.pembelian.ProdukListResponse;
 import com.tatabuku.app.model.pembelian.ProvinceDataResponse;
+import com.tatabuku.app.model.pembelian.RegisterModel;
+import com.tatabuku.app.model.pembelian.RegisterResponse;
 import com.tatabuku.app.model.pembelian.RekeningDataModel;
 import com.tatabuku.app.model.pembelian.RekeningDataResponse;
 import com.tatabuku.app.model.pembelian.RepostPaymentModel;
@@ -86,7 +90,6 @@ import com.tatabuku.app.model.penjualan.SaleIdPostModel;
 import com.tatabuku.app.model.penjualan.ShippingReceivedModel;
 import com.tatabuku.app.model.rekening.CatatBiayaRequest;
 import com.tatabuku.app.model.rekening.CatatBiayaResponse;
-import com.tatabuku.app.model.rekening.CreateBankAccountParams;
 import com.tatabuku.app.model.rekening.CreateBankAccountRequest;
 import com.tatabuku.app.model.rekening.CreateBankAccountResponse;
 import com.tatabuku.app.model.rekening.DashboardRekeningRequest;
@@ -111,7 +114,7 @@ import com.tatabuku.app.model.titip_jurnal.DetailTitipJurnalRequest;
 import com.tatabuku.app.model.titip_jurnal.DetailTitipJurnalResponse;
 import com.tatabuku.app.model.titip_jurnal.LoadTitipJurnalRequest;
 import com.tatabuku.app.model.titip_jurnal.LoadTitipJurnalResponse;
-import com.tatabuku.app.ui.terms.condition.PrivacyPolicyResponse;
+import com.tatabuku.app.model.pembelian.PrivacyPolicyResult;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -394,7 +397,10 @@ public interface APIService {
     @POST("/create_rekening")
     Call<CreateBankAccountResponse> createBankAccount(@Body CreateBankAccountRequest createBankAccountRequest);
 
+    @POST("/signup_custom")
+    Call<RegisterResponse> register(@Body RegisterModel registerModel);
+
     // terms condition
-    @GET("/api/res.company/?&query={terms_condition}")
-    Call<PrivacyPolicyResponse> getTermsCondition();
+    @POST("/company_privacy_policy")
+    Call<PrivacyPolicyRespone> getTermsCondition(@Body PrivacyRequestModel privacyRequestModel);
 }

@@ -8,8 +8,6 @@ import com.tatabuku.app.model.pembelian.DownPaymentResult;
 import com.tatabuku.app.model.pembelian.InvoiceListResponse;
 import com.tatabuku.app.model.pembelian.InvoiceResult;
 import com.tatabuku.app.model.pembelian.LoadPaymentModel;
-import com.tatabuku.app.model.pembelian.LunasDataResponse;
-import com.tatabuku.app.model.pembelian.LunasDataResult;
 import com.tatabuku.app.model.pembelian.OrderListResponse;
 import com.tatabuku.app.model.pembelian.OrderResult;
 import com.tatabuku.app.model.pembelian.PembayaranItem;

@@ -48,12 +48,12 @@
     <string name="bulan_ini">Bulan ini</string>
     <string name="tahun_ini">Tahun ini</string>
     <string name="belum_jatuh_tempo">Belum Jatuh Tempo</string>
-    <string name="belum_terlambat_bayar">Belum Terlambat Bayar</string>
-    <string name="terlambat_1_30_hari">Terlambat 1-30 Hari</string>
-    <string name="terlambat_31_60_hari">Terlambat 31-60 Hari</string>
+    <string name="belum_terlambat_bayar">Total Piutang</string>
+    <string name="terlambat_1_30_hari">0-30 Hari</string>
+    <string name="terlambat_31_60_hari">&gt; 30 Hari</string>
     <string name="hutang_0_hari">0 Hari</string>
-    <string name="hutang_1_30_hari">1-30 Hari</string>
-    <string name="hutang_31_60_hari">31-60 Hari</string>
+    <string name="hutang_1_30_hari">0-30 Hari</string>
+    <string name="hutang_31_60_hari">&gt; 30 Hari</string>
     <string name="hutang">Hutang</string>
     <string name="piutang">Piutang</string>
     <string name="uang_saya">Uang Saya</string>
@@ -83,7 +83,7 @@
     <string name="belum_lunas">Belum Lunas</string>
     <string name="sudah_lunas">Sudah Lunas</string>
     <string name="cancel">Cancel</string>
-    <string name="partially_done">Partially Done</string>
+    <string name="partially_done">Terima Sebagian</string>
     <string name="n_barang">%1$d Barang</string>
 
     <string name="bayar_dp">Bayar DP</string>
@@ -216,4 +216,10 @@
     <string name="laporan_ar_aging">Aging Piutang</string>
     <string name="laporan_ap_aging">Aging Hutang</string>
     <string name="laporan_stok">Laporan Stok</string>
+
+    <string name="register">DAFTAR</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="signup_login_hint">Already have an account? Sign In</string>
+    <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
 </resources>
