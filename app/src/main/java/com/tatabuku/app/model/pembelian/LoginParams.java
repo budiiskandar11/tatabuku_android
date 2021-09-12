@@ -8,7 +8,7 @@ public class LoginParams {
     private String password;
 
     public LoginParams(String login, String password) {
-        db = "tatabuku";
+        db = "Tatabuku";
         this.login = login;
         this.password = password;
     }

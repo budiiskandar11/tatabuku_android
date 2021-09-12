@@ -2,6 +2,7 @@ package com.tatabuku.app.ui.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -10,6 +11,9 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import com.tatabuku.app.databinding.ActivityAdminSettingBinding;
+import com.tatabuku.app.ui.home.HomeActivity;
+import com.tatabuku.app.ui.penjualan.dashboard.DashboardCustomerActivity;
+import com.tatabuku.app.ui.saldoPiutang.ActivitySaldoPiutang;
 
 
 public class AdminSetting extends AppCompatActivity {
@@ -33,32 +37,40 @@ public class AdminSetting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         url = getIntent().getStringExtra(ARG_URL);
         setupView();
+        configureView();
     }
 
     private void setupView() {
         binding = ActivityAdminSettingBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
-        binding.adminWeb.setWebViewClient(client);
-        binding.adminWeb.getSettings().setJavaScriptEnabled(true);
-        binding.adminWeb.loadUrl("http://103.152.118.69:8069/web?debug#action=308");
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            switch (keyCode) {
-                case KeyEvent.KEYCODE_BACK:
-                    if (binding.adminWeb.canGoBack()) {
-                        binding.adminWeb.goBack();
-                    } else {
-                        finish();
-                    }
-                    return true;
+    private void configureView() {
+        binding.menuSaldoAwal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminSetting.this, ActivitySaldoPiutang.class);
+                startActivity(intent);
             }
+        });
 
-        }
-        return super.onKeyDown(keyCode, event);
+        binding.menuSaldoPiutang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminSetting.this, DashboardCustomerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.menuSaldoStock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminSetting.this, DashboardCustomerActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
 }

@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.admin.AdminSetting">
-
-    <WebView
-        android:layout_width="match_parent"
-        android:id="@+id/admin_web"
-        android:layout_marginTop="-30dp"
-        android:layout_height="match_parent"/>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="12dp"
-            android:text="Admin"
+            android:text="Settings"
             android:textColor="@color/white"
             android:textSize="24dp"
             app:layout_constraintStart_toEndOf="@id/back"
@@ -48,5 +41,59 @@
 
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="0dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:alignmentMode="alignBounds"
+                android:background="@android:color/transparent"
+                android:columnCount="4">
+
+                <com.tatabuku.app.view.HomeMenuView
+                    android:id="@+id/menu_saldo_awal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    app:homeMenuImage="@drawable/ic_rekening"
+                    app:homeMenuText="Saldo Awal Piutang" />
+
+                <com.tatabuku.app.view.HomeMenuView
+                    android:id="@+id/menu_saldo_piutang"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    app:homeMenuImage="@drawable/ic_rekening"
+                    app:homeMenuText="Saldo Awal Hutang" />
+
+
+                <com.tatabuku.app.view.HomeMenuView
+                    android:id="@+id/menu_saldo_stock"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    app:homeMenuImage="@drawable/ic_pembelian"
+                    app:homeMenuText="Saldo Awal Inventory" />
+
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>

@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/drawable/full_circle_green.xml" value="0.12291666666666666" />
         <entry key="app/src/main/res/drawable/gradient_blue_white.xml" value="0.12291666666666666" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.13796296296296295" />
+        <entry key="app/src/main/res/layout/activity_admin_setting.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_checkout_pembelian.xml" value="0.10677083333333333" />
         <entry key="app/src/main/res/layout/activity_checkout_penjualan.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_dashboard_customer.xml" value="0.10173433961258818" />
@@ -22,16 +23,22 @@
         <entry key="app/src/main/res/layout/activity_pengiriman_barang.xml" value="0.10106270053442058" />
         <entry key="app/src/main/res/layout/activity_privacy_policy.xml" value="0.21927083333333333" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_saldo_piutang.xml" value="0.24010416666666667" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.10677083333333333" />
+        <entry key="app/src/main/res/layout/activity_stock_balance.xml" value="0.2175732217573222" />
+        <entry key="app/src/main/res/layout/activity_stock_inventory.xml" value="0.20244565217391305" />
         <entry key="app/src/main/res/layout/activity_tambah_customer.xml" value="0.10677083333333333" />
         <entry key="app/src/main/res/layout/activity_tambah_dp_customer.xml" value="0.21927083333333333" />
         <entry key="app/src/main/res/layout/activity_terms_condition.xml" value="0.21927083333333333" />
         <entry key="app/src/main/res/layout/activity_titip_journal.xml" value="0.10677083333333333" />
+        <entry key="app/src/main/res/layout/dashboard_customer_list_item.xml" value="0.24010416666666667" />
         <entry key="app/src/main/res/layout/dashboard_supplier_list_hutang_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dashboard_supplier_list_item.xml" value="0.24010416666666667" />
         <entry key="app/src/main/res/layout/detail_supplier_dp_item.xml" value="0.10677083333333333" />
         <entry key="app/src/main/res/layout/detail_supplier_list_item.xml" value="0.165625" />
         <entry key="app/src/main/res/layout/order_list_item.xml" value="0.1634963768115942" />
         <entry key="app/src/main/res/layout/penerimaan_list_item.xml" value="0.1634963768115942" />
+        <entry key="app/src/main/res/layout/piutang_list_customer.xml" value="0.24010416666666667" />
         <entry key="app/src/main/res/layout/return_list_item.xml" value="0.165625" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12291666666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.12291666666666666" />
