@@ -22,9 +22,11 @@ import com.tatabuku.app.util.StringHelper;
 public class PiutangListCustomerAdapter extends  RecyclerView.Adapter<RecyclerView.ViewHolder> {
     
     private ActivitySaldoPiutangViewModel viewModel;
+    private Context context;
+
 
     public PiutangListCustomerAdapter(Context context, ActivitySaldoPiutangViewModel viewModel) {
-
+        this.context = context;
         this.viewModel = viewModel;
     }
 
