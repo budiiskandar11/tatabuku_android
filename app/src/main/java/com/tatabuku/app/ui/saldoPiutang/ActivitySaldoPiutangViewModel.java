@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.tatabuku.app.model.penjualan.CustomerResult;
 import com.tatabuku.app.model.penjualan.DashboardCustomerResponse;
+import com.tatabuku.app.model.penjualan.DashboardHutangCustomerResponse;
 import com.tatabuku.app.model.penjualan.FilterPostModel;
 import com.tatabuku.app.service.ConnectionManager;
 import com.tatabuku.app.ui.penjualan.dashboard.DashboardCustomerActivity;
@@ -36,25 +37,25 @@ public class ActivitySaldoPiutangViewModel extends ViewModel {
     }
 
     public void fetchListData( String query) {
-        fetchListPenjualan(query);
+        fetchListPiutang(query);
     }
 
-    public void fetchListPenjualan(String query) {
-        String sort = getIsSort().getValue() ? "total_penjualan_tahun" : null;
+    private void fetchListPiutang(String query) {
+        String sort = getIsSort().getValue() ? "hutang_60" : null;
         FilterPostModel model = new FilterPostModel(query, sort);
-        Call<DashboardCustomerResponse> call = ConnectionManager.getInstance().getService().getListPenjualanCustomer(model);
-        call.enqueue(new Callback<DashboardCustomerResponse>() {
+        Call<DashboardHutangCustomerResponse> call = ConnectionManager.getInstance().getService().getListHutangCustomer(model);
+        call.enqueue(new Callback<DashboardHutangCustomerResponse>() {
             @Override
-            public void onResponse(Call<DashboardCustomerResponse> call, Response<DashboardCustomerResponse> response) {
+            public void onResponse(Call<DashboardHutangCustomerResponse> call, Response<DashboardHutangCustomerResponse> response) {
                 if (response.body() != null) {
                     if (response.body().getResult() != null) {
-                        listCustomer.setValue(response.body().getResult().getListCustomerNonPav().getDatalist());
+                        listCustomer.setValue(response.body().getResult().getListCustomerNonPav());
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<DashboardCustomerResponse> call, Throwable t) {
+            public void onFailure(Call<DashboardHutangCustomerResponse> call, Throwable t) {
 
             }
         });

@@ -23,7 +23,11 @@ public class PiutangListCustomerAdapter extends  RecyclerView.Adapter<RecyclerVi
     
     private ActivitySaldoPiutangViewModel viewModel;
     private Context context;
+    private ActivitySaldoPiutangListener listener;
 
+    public void setListener(ActivitySaldoPiutangListener listener) {
+        this.listener = listener;
+    }
 
     public PiutangListCustomerAdapter(Context context, ActivitySaldoPiutangViewModel viewModel) {
         this.context = context;
@@ -40,7 +44,6 @@ public class PiutangListCustomerAdapter extends  RecyclerView.Adapter<RecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
         if (holder instanceof PiutangListCustomerAdapter.ViewHolder) {
             PiutangListCustomerAdapter.ViewHolder vh = (PiutangListCustomerAdapter.ViewHolder) holder;
             CustomerResult customer = viewModel.getListCustomer().getValue().get(position);
@@ -48,6 +51,17 @@ public class PiutangListCustomerAdapter extends  RecyclerView.Adapter<RecyclerVi
             vh.binding.name.setText(customer.getName());
             vh.binding.address.setText(customer.getStreet());
             vh.binding.phone.setText(customer.getPhone());
+            vh.binding.valueName.setText("Total Piutang");
+
+            vh.binding.getRoot().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    if (listener != null) {
+                        listener.onItemClick(customer);
+                    }
+                }
+            });
         }
     }
 
@@ -56,8 +70,7 @@ public class PiutangListCustomerAdapter extends  RecyclerView.Adapter<RecyclerVi
         return viewModel.getListCustomer().getValue().size();
     }
 
-    public void setListener(DashboardCustomerListener listener) {
-    }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private PiutangListCustomerBinding binding;

@@ -40,6 +40,7 @@
 
         <activity android:name=".ui.rekening.create_bank_account.CreateBankAccountActivity" />
         <activity android:name=".ui.admin.AdminSetting" />
+        <activity android:name=".ui.saldo_hutang.ActivitySaldoHutang" />
         <activity android:name=".ui.terms.condition.PrivacyPolicy" />
         <activity android:name=".ui.terms.condition.TermsCondition" /> <!-- <activity android:name=".terms.TermsCondition" /> -->
         <!-- <activity android:name=".terms.Terms_and_conditions" /> -->

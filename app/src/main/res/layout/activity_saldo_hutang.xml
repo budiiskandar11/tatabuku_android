@@ -7,7 +7,7 @@
     android:focusable="true"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    tools:context=".ui.saldoPiutang.ActivitySaldoPiutang">
+    tools:context=".ui.saldo_hutang.ActivitySaldoHutang">
 
 
 
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="Saldo Awal Piutang"
+                android:text="Saldo Hutang"
                 android:gravity="center"
                 android:textColor="@color/accounting_dark_blue"
                 android:textSize="24sp" />
@@ -124,6 +124,7 @@
     </LinearLayout>
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/add_customer"
         android:layout_width="150dp"
         android:layout_height="30dp"

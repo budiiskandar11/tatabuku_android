@@ -1,4 +1,4 @@
-package com.tatabuku.app.ui.saldoPiutang;
+package com.tatabuku.app.ui.saldo_hutang;
 
 import android.content.Intent;
 import android.graphics.PorterDuff;
@@ -15,24 +15,28 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.tatabuku.app.R;
-import com.tatabuku.app.databinding.ActivitySaldoPiutangBinding;
+import com.tatabuku.app.databinding.ActivitySaldoHutangBinding;
+import com.tatabuku.app.model.pembelian.SupplierResult;
 import com.tatabuku.app.model.penjualan.CustomerResult;
-import com.tatabuku.app.ui.penjualan.dashboard.DashboardCustomerActivity;
-import com.tatabuku.app.ui.penjualan.dashboard.DashboardCustomerListener;
-import com.tatabuku.app.ui.penjualan.dashboard.DashboardCustomerViewModel;
+import com.tatabuku.app.ui.pembelian.detail.DetailSupplierActivity;
 import com.tatabuku.app.ui.penjualan.detail.DetailCustomerActivity;
 import com.tatabuku.app.ui.penjualan.tambah.customer.TambahCustomerActivity;
+import com.tatabuku.app.ui.saldoPiutang.ActivitySaldoPiutang;
+import com.tatabuku.app.ui.saldoPiutang.ActivitySaldoPiutangListener;
+import com.tatabuku.app.ui.saldoPiutang.PiutangListCustomerAdapter;
 
 import java.util.List;
 
-public class ActivitySaldoPiutang extends AppCompatActivity {
+public class ActivitySaldoHutang extends AppCompatActivity {
 
-    private ActivitySaldoPiutangBinding binding;
-    private PiutangListCustomerAdapter listAdapter;
-    private ActivitySaldoPiutangViewModel viewModel;
+
+    private ActivitySaldoHutangBinding binding;
+    private ActivitySaldoHutangViewModel viewModel;
+    private ActivitySaldoHutangAdapter listAdapter;
     private LinearLayoutManager layoutManager;
+    private ActivitySaldoHutangListener listener;
     private String query = "";
-    private ActivitySaldoPiutangListener listener;
+
 
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
@@ -61,21 +65,44 @@ public class ActivitySaldoPiutang extends AppCompatActivity {
         setupView();
         configureView();
         setupList();
-
-
     }
+
+
+
     private void setupViewModel() {
-        viewModel = new ViewModelProvider(this).get(ActivitySaldoPiutangViewModel.class);
+        viewModel = new ViewModelProvider(this).get(ActivitySaldoHutangViewModel.class);
     }
 
     private void setupView() {
-            binding = ActivitySaldoPiutangBinding.inflate(getLayoutInflater());
-            View view = binding.getRoot();
-            setContentView(view);
+        binding = ActivitySaldoHutangBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+    }
+
+    private void configureViewModel() {
+        viewModel.fetchListData(query);
+        viewModel.getIsSort().observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                if (aBoolean) {
+                    binding.sort.setColorFilter(ContextCompat.getColor(ActivitySaldoHutang.this, R.color.blue), PorterDuff.Mode.SRC_ATOP);
+                } else {
+                    binding.sort.setColorFilter(null);
+                }
+            }
+        });
+
+        viewModel.getSupplierList().observe(this, new Observer<List<SupplierResult>>() {
+            @Override
+            public void onChanged(List<SupplierResult> supplierResults) {
+                listAdapter.notifyDataSetChanged();
+                binding.swipeContainer.setRefreshing(false);
+            }
+        });
+
     }
 
     private void configureView() {
-
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,14 +118,6 @@ public class ActivitySaldoPiutang extends AppCompatActivity {
             }
         });
 
-        binding.addCustomer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ActivitySaldoPiutang.this, TambahCustomerActivity.class);
-                startActivity(intent);
-            }
-        });
-
         binding.swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -111,52 +130,23 @@ public class ActivitySaldoPiutang extends AppCompatActivity {
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
 
-
-        listener = new ActivitySaldoPiutangListener() {
+        listener = new ActivitySaldoHutangListener() {
             @Override
-            public void onItemClick(CustomerResult customerResult) {
-                Intent intent = new Intent(ActivitySaldoPiutang.this, DetailCustomerActivity.class);
-                intent.putExtra(DetailCustomerActivity.ARG_CUSTOMER_ID, customerResult.getId());
+            public void onItemClick(SupplierResult result ) {
+                Intent intent = new Intent(ActivitySaldoHutang.this, DetailSupplierActivity.class);
+                intent.putExtra(DetailCustomerActivity.ARG_CUSTOMER_ID, result.getId());
                 startActivity(intent);
             }
         };
-
     }
-
-    private void configureViewModel() {
-        viewModel.fetchListData(query);
-        viewModel.getIsSort().observe(this, new Observer<Boolean>() {
-            @Override
-            public void onChanged(Boolean aBoolean) {
-                if (aBoolean) {
-                    binding.sort.setColorFilter(ContextCompat.getColor(ActivitySaldoPiutang.this, R.color.blue), PorterDuff.Mode.SRC_ATOP);
-                } else {
-                    binding.sort.setColorFilter(null);
-                }
-            }
-        });
-
-        viewModel.getListCustomer().observe(this, new Observer<List<CustomerResult>>() {
-            @Override
-            public void onChanged(List<CustomerResult> customerResults) {
-                listAdapter.notifyDataSetChanged();
-                binding.swipeContainer.setRefreshing(false);
-            }
-        });
-
-
-    }
-
 
     private void setupList() {
         layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         binding.list.setLayoutManager(layoutManager);
 
-        listAdapter = new PiutangListCustomerAdapter(this, viewModel);
+        listAdapter = new ActivitySaldoHutangAdapter(this, viewModel);
         listAdapter.setListener(listener);
         binding.list.setAdapter(listAdapter);
         listAdapter.notifyDataSetChanged();
     }
-
-
 }

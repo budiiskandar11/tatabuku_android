@@ -66,7 +66,8 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 showLoading();
-                viewModel.login(binding.email.getText().toString(), binding.password.getText().toString());
+//                viewModel.login(binding.email.getText().toString(), binding.password.getText().toString());
+                viewModel.login("admin", "a");
             }
         });
 

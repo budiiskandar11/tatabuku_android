@@ -14,6 +14,7 @@ import com.tatabuku.app.databinding.ActivityAdminSettingBinding;
 import com.tatabuku.app.ui.home.HomeActivity;
 import com.tatabuku.app.ui.penjualan.dashboard.DashboardCustomerActivity;
 import com.tatabuku.app.ui.saldoPiutang.ActivitySaldoPiutang;
+import com.tatabuku.app.ui.saldo_hutang.ActivitySaldoHutang;
 
 
 public class AdminSetting extends AppCompatActivity {
@@ -58,7 +59,7 @@ public class AdminSetting extends AppCompatActivity {
         binding.menuSaldoPiutang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminSetting.this, DashboardCustomerActivity.class);
+                Intent intent = new Intent(AdminSetting.this, ActivitySaldoHutang.class);
                 startActivity(intent);
             }
         });
