@@ -88,6 +88,8 @@ import com.tatabuku.app.model.penjualan.PengirimanBarangResponse;
 import com.tatabuku.app.model.pembelian.ProductIdPostModel;
 import com.tatabuku.app.model.penjualan.SaleIdPostModel;
 import com.tatabuku.app.model.penjualan.ShippingReceivedModel;
+import com.tatabuku.app.model.pos.CreateSalePosModel;
+import com.tatabuku.app.model.pos.CreateSalePosResponse;
 import com.tatabuku.app.model.rekening.CatatBiayaRequest;
 import com.tatabuku.app.model.rekening.CatatBiayaResponse;
 import com.tatabuku.app.model.rekening.CreateBankAccountRequest;
@@ -403,4 +405,8 @@ public interface APIService {
     // terms condition
     @POST("/company_privacy_policy")
     Call<PrivacyPolicyRespone> getTermsCondition(@Body PrivacyModel privacyModel);
+
+    // create sale pos
+    @POST("/create_sale_pos")
+    Call<CreateSalePosResponse> createSalePos(@Body CreateSalePosModel createSalePosModel);
 }

@@ -9,7 +9,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.tatabuku.app.databinding.ActivityHomeBinding;
-import com.tatabuku.app.databinding.ActivityWebViewBinding;
 import com.tatabuku.app.databinding.HomeBankItemBinding;
 import com.tatabuku.app.model.home.BankResult;
 import com.tatabuku.app.model.home.HomepageDataResult;
@@ -17,9 +16,8 @@ import com.tatabuku.app.ui.WebViewActivity;
 import com.tatabuku.app.ui.accounting.dashboard.DashboardAccountingActivity;
 import com.tatabuku.app.ui.admin.AdminSetting;
 import com.tatabuku.app.ui.pembelian.dashboard.DashboardSupplierActivity;
-import com.tatabuku.app.ui.fix_asset.dashboard.DashboardFixAssetActivity;
 import com.tatabuku.app.ui.penjualan.dashboard.DashboardCustomerActivity;
-import com.tatabuku.app.ui.titip_journal.detail.TitipJournalActivity;
+import com.tatabuku.app.ui.pos.activity.PosActivity;
 import com.tatabuku.app.util.StringHelper;
 
 import com.tatabuku.app.ui.rekening.dashboard.DashboardRekeningActivity;
@@ -149,5 +147,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        binding.menuPos.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, PosActivity.class)));
     }
 }

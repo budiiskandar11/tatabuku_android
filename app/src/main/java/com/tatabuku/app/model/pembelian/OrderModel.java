@@ -11,6 +11,7 @@ public class OrderModel implements Parcelable {
 
     private Integer product_id;
     private Integer product_qty = 0;
+    private Integer selected = 0;
     private Double price_unit = 0.0;
     private String name = "";
     private String image = "";
@@ -72,6 +73,14 @@ public class OrderModel implements Parcelable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public Integer getSelected() {
+        return selected;
+    }
+
+    public void setSelected(Integer selected) {
+        this.selected = selected;
     }
 
     @Override

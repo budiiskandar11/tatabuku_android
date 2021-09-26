@@ -8,6 +8,9 @@
     <string name="kas_dan_bank">Kas dan Bank</string>
     <string name="pembelian">Pembelian</string>
     <string name="penjualan">Penjualan</string>
+    <string name="pos">POS</string>
+    <string name="payNow">Sekarang</string>
+    <string name="payLetter">Nanti</string>
     <string name="rekening">Rekening</string>
     <string name="accounting">Accounting</string>
     <string name="fixed_asset">Fixed Asset</string>
