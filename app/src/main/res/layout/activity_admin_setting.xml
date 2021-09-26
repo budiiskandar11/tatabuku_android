@@ -92,6 +92,15 @@
                     app:homeMenuImage="@drawable/ic_pembelian"
                     app:homeMenuText="Saldo Awal Inventory" />
 
+                <com.tatabuku.app.view.HomeMenuView
+                    android:id="@+id/menu_rekening"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    app:homeMenuImage="@drawable/ic_rekening"
+                    app:homeMenuText="Tambah Rekening" />
+
             </GridLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

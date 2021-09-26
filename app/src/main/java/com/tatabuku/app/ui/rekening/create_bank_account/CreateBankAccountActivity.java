@@ -68,7 +68,8 @@ public class CreateBankAccountActivity extends BaseActivity {
                 showLoading();
                 String nama = binding.namaBank.getText().toString();
                 String rekening = binding.nomorRekening.getText().toString();
-                viewModel.createBankAccount(nama, rekening);
+                Double saldo = Double.parseDouble(binding.saldoAwal.getText().toString());
+                viewModel.createBankAccount(nama, rekening, saldo);
             }
         });
     }

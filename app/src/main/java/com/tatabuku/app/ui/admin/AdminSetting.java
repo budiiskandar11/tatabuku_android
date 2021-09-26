@@ -13,6 +13,7 @@ import android.webkit.WebViewClient;
 import com.tatabuku.app.databinding.ActivityAdminSettingBinding;
 import com.tatabuku.app.ui.home.HomeActivity;
 import com.tatabuku.app.ui.penjualan.dashboard.DashboardCustomerActivity;
+import com.tatabuku.app.ui.rekening.create_bank_account.CreateBankAccountActivity;
 import com.tatabuku.app.ui.saldoPiutang.ActivitySaldoPiutang;
 import com.tatabuku.app.ui.saldo_hutang.ActivitySaldoHutang;
 
@@ -48,6 +49,14 @@ public class AdminSetting extends AppCompatActivity {
     }
 
     private void configureView() {
+
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         binding.menuSaldoAwal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +77,14 @@ public class AdminSetting extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AdminSetting.this, DashboardCustomerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.menuRekening.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminSetting.this, CreateBankAccountActivity.class);
                 startActivity(intent);
             }
         });

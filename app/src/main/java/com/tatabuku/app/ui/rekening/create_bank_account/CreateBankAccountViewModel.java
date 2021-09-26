@@ -30,13 +30,13 @@ public class CreateBankAccountViewModel extends ViewModel {
         onError = new MutableLiveData<>();
     }
 
-    public void createBankAccount(String name, String rekening) {
+    public void createBankAccount(String name, String rekening, Double saldo) {
         if (name == null || name.isEmpty() || rekening == null || rekening.isEmpty()) {
             onError.setValue("Data tidak lengkap");
             return;
         }
 
-        CreateBankAccountParams params = new CreateBankAccountParams(name, rekening);
+        CreateBankAccountParams params = new CreateBankAccountParams(name, rekening, saldo);
         CreateBankAccountRequest request = new CreateBankAccountRequest(params);
         Call<CreateBankAccountResponse> call = ConnectionManager.getInstance().getService().createBankAccount(request);
         call.enqueue(new Callback<CreateBankAccountResponse>() {
